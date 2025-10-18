@@ -14,7 +14,7 @@ import static java.util.stream.Collectors.toList;
 
 
 
-class Result {
+class countResponseTimeRegressions {
 
     /*
      * Complete the 'countResponseTimeRegressions' function below.
@@ -50,29 +50,4 @@ class Result {
         return count;
     }
 
-}
-
-public class countResponseTimeRegressions {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
-        int responseTimesCount = Integer.parseInt(bufferedReader.readLine().trim());
-
-        List<Integer> responseTimes = IntStream.range(0, responseTimesCount).mapToObj(i -> {
-                    try {
-                        return bufferedReader.readLine().replaceAll("\\s+$", "");
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                })
-                .map(String::trim)
-                .map(Integer::parseInt)
-                .collect(toList());
-
-        int result = Result.countResponseTimeRegressions(responseTimes);
-
-        System.out.println(result);
-
-        bufferedReader.close();
-    }
 }
