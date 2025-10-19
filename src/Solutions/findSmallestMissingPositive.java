@@ -31,7 +31,7 @@ public class findSmallestMissingPositive {
         // remove non-positives
         List<Integer> positives = sorted.stream()
                 .filter(n -> n > 0)
-                .collect(Collectors.toList());
+                .toList();
         // keep track of smallest number, default is 1
         int smallest = 1;
         // each number in the list
